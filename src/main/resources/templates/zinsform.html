@@ -1,4 +1,4 @@
-<html>
+<html lang="de" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
@@ -14,28 +14,28 @@
      <div class="card-body">
 
 
-      <form method="post">
+      <form method="post" th:object="${zinsen}">
        <div class="form-group">
         <label>Anfangskapital</label>
         <input type="text" autocomplete="off" class="form-control"
-         value="5000">
+         value="5000" th:field="*{anfangsKapital}" name="anfangsKapital">
         <small class="text-danger">Muss positiv sein!</small>
        </div>
        <div class="form-group">
         <label>Laufzeit</label>
         <input type="text" autocomplete="off"
-         class="form-control" value="3">
+         class="form-control" value="3" th:field="*{laufzeit}" name="laufzeit">
         <small class="text-danger">Muss größer als 0 sein</small>
        </div>
        <div class="form-group">
         <label>Zinssatz (% p.a.)</label>
         <input class="form-control" type="text" autocomplete="off"
-         value="0.5">
+         value="0.5" th:field="*{zinsSatz}" name="zinsSatz">
         <small class="text-danger">Muss positiv sein!</small>
        </div>
        <div class="form-group form-check">
         <input type="checkbox" class="form-check-input"
-         checked="checked">
+         checked="checked" th:field="*{tabelleAnzeigen}" name="tabelleAnzeigen">
         <label class="form-check-label">Tabelle anzeigen</label>
        </div>
        <button type="submit" class="btn btn-primary">Berechnen</button>

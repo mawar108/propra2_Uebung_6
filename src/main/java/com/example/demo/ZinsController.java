@@ -21,9 +21,15 @@ public class ZinsController {
 		return "zinsform";
 	}
 
+	@ModelAttribute("zinsen")
+	ZinsForm defaultForm() {
+		return new ZinsForm();
+	}
+
 	@PostMapping("/")
 	public String postForm(Model model, @ModelAttribute("zinsen") ZinsForm zinsForm){
-		//zinsService.berechneEndkapital
+		Ergebnis ergebnis = zinsService.berechneEndkapital(zinsForm);
+		model.addAttribute("ergebnis",ergebnis);
 		return "zinsform";
 	}
 

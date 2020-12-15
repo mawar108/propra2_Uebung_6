@@ -1,6 +1,8 @@
 package com.example.demo;
 
+import org.springframework.stereotype.Component;
 
+@Component
 public class ZinsService {
 
     public Ergebnis berechneEndkapital(ZinsForm form) {
