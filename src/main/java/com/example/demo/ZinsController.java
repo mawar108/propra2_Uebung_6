@@ -12,12 +12,9 @@ public class ZinsController {
 
 	private final ZinsService zinsService;
 
-	/*
 	public ZinsController(ZinsService zinsService) {
 		this.zinsService = zinsService;
 	}
-
-	 */
 
 	@GetMapping("/")
 	public String getform(){
@@ -26,7 +23,7 @@ public class ZinsController {
 
 	@PostMapping("/")
 	public String postForm(Model model, @ModelAttribute("zinsen") ZinsForm zinsForm){
-		//zinsService.berecheEndkapital
+		//zinsService.berechneEndkapital
 		return "zinsform";
 	}
 
